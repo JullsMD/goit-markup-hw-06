@@ -348,15 +348,6 @@ textarea {
 
   color: var(--primary-text-color);
 }
-.form-label,
-.comment,
-.comment::placeholder {
-  margin-bottom: 4px;
-
-  font-size: 12px;
-  line-height: 1.116;
-  letter-spacing: 0.01em;
-}
 
 .form-style {
   display: flex;
@@ -417,27 +408,69 @@ textarea {
   border: 1px solid var(--form-border);
   border-radius: 4px;
 }
+
+/* comment */
+
+.form-label,
+.comment,
+.comment::placeholder {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.116;
+  letter-spacing: 0.01em;
+}
 .comment {
   padding: 12px 16px;
   color: var(--form-comment);
 }
+
 .comment::placeholder {
   color: var(--form-comment);
 }
+/* agree */
 .check {
   position: relative;
-}
-.checkbox {
+
   margin-top: 10px;
   margin-bottom: 30px;
 
   margin-right: auto;
   margin-left: auto;
 }
-.checkbox::before {
-  content: "";
-  width: ;
-  height: ;
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.check-label {
+  display: flex;
+  align-items: center;
+}
+
+.check-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  border: 2px solid var(--primary-text-color);
+  border-radius: 2px;
+}
+.checkbox:checked ~ .check-icon {
+  border-color: transparent;
+  background-color: var(--accent-color);
+  background-image: url(../images/icons/form/checked.svg);
+  background-size: contain;
+  background-origin: border-box;
 }
 .agree {
   margin-left: 7px;
@@ -454,7 +487,7 @@ textarea {
   font-size: 14px;
   line-height: 1.714;
 }
-
+/* submit */
 .modal-form .submit {
   margin-right: auto;
   margin-left: auto;
