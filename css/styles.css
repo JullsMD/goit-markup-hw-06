@@ -118,9 +118,12 @@ textarea {
 }
 
 .site-nav .link {
+  position: relative;
+  display: block;
   width: 100%;
   display: block;
   padding-top: 32px;
+  padding-bottom: 32px;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -140,7 +143,6 @@ textarea {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
-  outline: none;
 }
 .link:visited {
   color: var(--primary-text-color);
@@ -148,15 +150,16 @@ textarea {
 
 .site-nav .current::after {
   content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: stretch;
-
-  margin-top: 32px;
+  justify-content: stretch; */
 
   height: 4px;
-
+  width: 100%;
   border-radius: 2px;
   background-color: var(--accent-color);
 }
@@ -182,7 +185,6 @@ textarea {
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--accent-color);
-  outline: none;
 }
 
 .icon-mail,
@@ -252,8 +254,6 @@ textarea {
 
   background-color: var(--accent-color);
   color: var(--primary-background-color);
-
-  outline: none;
 }
 
 /* Модальное окно */
@@ -263,21 +263,26 @@ textarea {
   pointer-events: none;
 }
 .backdrop {
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  pointer-events: none;
+
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 999;
-  opacity: 1;
 
   background-color: var(--backdrop);
 }
 .backdrop .is-hidden {
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -691,7 +696,6 @@ textarea {
   background-color: var(--accent-color);
   color: var(--primary-background-color);
   cursor: pointer;
-  outline: none;
 }
 
 /* Clients */
@@ -729,7 +733,6 @@ textarea {
 .clients-link:focus {
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
-  outline: none;
 }
 .clients-icon {
   fill: currentColor;
@@ -772,7 +775,6 @@ textarea {
 .address .link:hover,
 .address .link:focus {
   color: var(--accent-color);
-  outline: none;
 }
 
 .contacts-list .item {
@@ -788,7 +790,6 @@ textarea {
 .contacts-list .link:hover,
 .contacts-list .link:focus {
   color: var(--accent-color);
-  outline: none;
 }
 
 /* socials-footer */
@@ -834,7 +835,6 @@ textarea {
 .soc-link:hover,
 .soc-link:focus {
   background-color: var(--accent-color);
-  outline: none;
 }
 .soc-icon {
   fill: currentColor;
@@ -999,7 +999,6 @@ textarea {
   background-color: var(--accent-color);
   color: var(--primary-background-color);
   border: 1px solid var(--accent-color);
-  outline: none;
 }
 
 /* Карточки */
@@ -1042,7 +1041,6 @@ textarea {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   border: 1px solid var(--border-card);
-  outline: none;
 }
 
 .card-img {
@@ -1106,6 +1104,7 @@ textarea {
   color: var(--primary-background-color);
 }
 
-.card-thumb:hover .card-overlay {
+.card:hover .card-overlay,
+.card:focus .card-overlay {
   transform: translateY(0%);
 }
