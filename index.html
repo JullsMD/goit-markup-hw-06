@@ -61,7 +61,7 @@
 
   <div class="modal">
     <button type="button" class="close-icon" data-modal-close>
-      <svg class="close" width="11" height="11">
+      <svg width="11" height="11">
         <use href="./images/icons/sprite.svg#close"></use>
       </svg>
     </button>
@@ -71,41 +71,52 @@
     <!--  -->
     <strong class="modal-slogan">Оставьте свои данные, мы вам перезвоним</strong>
     <!-- name -->
-    <div  class="label-input">
+    <div class="form-style">
       <label class="form-label" for="name">Имя</label>
-      <input type="text" id="name" name="name" class="form-input" autocomplete="off">
-      <svg class="form-icon">
-        <use href="./images/icons/form/name.svg"></use>
+      <div class="input-style">
+      <input type="text" id="name" name="name" class="form-input" autocomplete="off" placeholder=" ">
+      <svg class="form-icon name">
+        <use href="./images/icons/sprite2.svg#name"></use>
       </svg>
     </div>
+    </div>
+
     <!-- tel -->
-    <div class="label-input">
+    <div class="form-style">
       <label class="form-label" for="tel">Телефон</label>
-      <input type="tel" id="tel" name="tel" class="form-input" autocomplete="off">
-      <svg class="form-icon" width="13" height="13">
-        <use href="./images/icons/sprite.svg#number"></use>
+      <div class="input-style">
+      <input type="tel" id="tel" name="tel" class="form-input" autocomplete="off" placeholder=" ">
+      <svg class="form-icon">
+        <use href="./images/icons/sprite2.svg#number"></use>
       </svg>
     </div>
+    </div>
+
     <!-- mail -->
-    <div class="label-input">
+    <div class="form-style">
       <label class="form-label" for="email">Почта</label>
-      <input type="email" id="email" name="email" class="form-input">
-      <svg class="form-icon" width="15" height="12">
-        <use href="./images/icons/sprite.svg#email"></use>
+      <div class="input-style">
+      <input type="email" id="email" name="email" class="form-input" placeholder=" ">
+      <svg class="form-icon">
+        <use href="./images/icons/sprite2.svg#email"></use>
       </svg>
     </div>
-    <!-- comment -->
-    <div class="label-input">
-      <label class="form-label" for="comment">Комментарий</label>
-      <textarea name="comment" id="comment" class="comment" cols="30" rows="10" placeholder="Введите текст"></textarea>
     </div>
+
+    <!-- comment -->
+    <div class="form-style">
+      <label class="form-label">Комментарий</label>
+      <textarea name="comment" class="comment" cols="30" rows="10" placeholder="Введите текст"></textarea>
+    </div>
+
     <!-- agree -->
     <div class="check">
-      <input type="checkbox" class="checkbox"><span class="agree">  Соглашаюсь с рассылкой и принимаю </span><a class="link">Условия договора</a>
-      <svg class="form-icon" width="16" height="15">
-        <use href="./images/icons/sprite.svg#check"></use>
+      <input type="checkbox" class="checkbox"><span class="agree">Соглашаюсь с рассылкой и принимаю </span><a class="check-link">Условия договора</a>
+      <svg class="form-icon">
+        <use href="./images/icons/sprite2.svg#checked"></use>
       </svg>
     </div>
+
     <!-- submit -->
     <button class="submit" type="submit">Отправить</button>
     </form>
